@@ -27,7 +27,7 @@ const AddOrEditForm = ({ editMode, setEditMode, todoList, setTodoList, AddTodo, 
 
     return (
         <>
-            <div className="w-[328px] h-[162px] p-[24px] border border-[#959595] shadow-xl">
+            <div className="bottomShadow w-full max-w-[351px] h-[162px] p-[24px] border border-[#959595] shadow-xl">
 
                 <form className="w-full h-full flex flex-col justify-between items-center">
 

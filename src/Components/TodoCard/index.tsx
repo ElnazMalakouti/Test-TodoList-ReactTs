@@ -13,16 +13,16 @@ interface Iprops extends Itodo {
 const TodoCard = ({ index, Id, Text, editMode, setEditMode, deleteTodo }: Iprops) => {
     return (
         <>
-            <div className="w-[450px] h-[65px] p-[16px] text-[20px] border border-[#959595] flex justify-between items-center">
+            <div className={`bottomShadow ${editMode.Id === Id ? 'bg-[#F5DF96]' : ''} w-full max-w-[450px] h-[65px] p-[16px] text-[20px] border border-[#959595] flex justify-between items-center`}>
 
-                <div className="flex justify-center items-center gap-[16px]">
+                <div className="flex justify-center items-center gap-[8px] md:gap-[16px]">
 
                     <p>{index + 1}.</p>
                     <p>{Text}</p>
 
                 </div>
 
-                <div className="flex justify-center items-center gap-[16px] text-[26px] text-[#686B6F]">
+                <div className="flex justify-center items-center gap-[8px] md:gap-[16px] text-[26px] text-[#686B6F]">
 
                     <button
                         onClick={() => setEditMode({

@@ -52,42 +52,43 @@ function App() {
 
   return (
     <>
-      <div className='w-[75%] h-[30%] py-[40px] px-[60px] border border-[#959595] flex flex-col gap-[30px] justify-start items-start'>
-        <p className='text-[22px] text-bold'>{editMode.isEnable ? 'Update' : 'Add'} Mode</p>
+      <div className='w-full'>
+        <div className='w-full lg:w-[75%] p-[16px] lg:py-[40px] lg:px-[60px] border border-[#959595] flex flex-col gap-[30px] justify-start items-start overflow-auto'>
+          <p className='text-[22px] text-bold'>{editMode.isEnable ? 'Update' : 'Add'} Mode</p>
 
-        <div className='w-full h-full px-[20px] flex justify-between items-center'>
+          <div className='w-full px-[20px] flex flex-col md:flex-row gap-[16px] justify-center lg:justify-between items-center'>
 
-          <div className='w-full h-full mb-auto flex justify-start items-start'>
-            <AddOrEditForm
-              editMode={editMode}
-              setEditMode={setEditMode}
-              todoList={todoList}
-              setTodoList={setTodoList}
-              AddTodo={AddTodo}
-              EditTodo={EditTodo}
-            />
-          </div>
+            <div className='w-full lg:h-full lg:mb-auto flex justify-start items-start'>
+              <AddOrEditForm
+                editMode={editMode}
+                setEditMode={setEditMode}
+                todoList={todoList}
+                setTodoList={setTodoList}
+                AddTodo={AddTodo}
+                EditTodo={EditTodo}
+              />
+            </div>
 
-          <div className='flex flex-col justify-center items-center gap-[8px]'>
-            {
-              todoList && todoList.map((item, index) => {
-                return <TodoCard
-                  index={index}
-                  key={item.Id}
-                  Id={item.Id}
-                  Text={item.Text}
-                  editMode={editMode}
-                  setEditMode={setEditMode}
-                  deleteTodo={deleteTodo}
-                />
-              })
-            }
+            <div className='w-full pb-[16px] flex flex-col justify-center items-center gap-[8px]'>
+              {
+                todoList && todoList.map((item, index) => {
+                  return <TodoCard
+                    index={index}
+                    key={item.Id}
+                    Id={item.Id}
+                    Text={item.Text}
+                    editMode={editMode}
+                    setEditMode={setEditMode}
+                    deleteTodo={deleteTodo}
+                  />
+                })
+              }
+            </div>
+
           </div>
 
         </div>
-
       </div>
-      {console.log(todoList)}
     </>
   );
 
