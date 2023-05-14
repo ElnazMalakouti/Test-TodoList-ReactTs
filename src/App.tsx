@@ -33,6 +33,7 @@ function App() {
     setTodoList(tempTodoList)
     setEditMode({
       ...editMode,
+      Id: null,
       isEnable: false
     })
   }

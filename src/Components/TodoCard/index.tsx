@@ -13,7 +13,7 @@ interface Iprops extends Itodo {
 const TodoCard = ({ index, Id, Text, editMode, setEditMode, deleteTodo }: Iprops) => {
     return (
         <>
-            <div className={`bottomShadow ${editMode.Id === Id ? 'bg-[#F5DF96]' : ''} w-full max-w-[450px] h-[65px] p-[16px] text-[20px] border border-[#959595] flex justify-between items-center`}>
+            <div className={`bottomShadow ${editMode.Id === Id ? 'bg-[#F5DF96]' : 'bg-transparent'} w-full max-w-[450px] h-[65px] p-[16px] text-[20px] border border-[#959595] flex justify-between items-center`}>
 
                 <div className="flex justify-center items-center gap-[8px] md:gap-[16px]">
 
@@ -44,6 +44,7 @@ const TodoCard = ({ index, Id, Text, editMode, setEditMode, deleteTodo }: Iprops
                 </div>
 
             </div>
+            {console.log(editMode)} 
         </>
     )
 }
